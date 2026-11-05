@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日大赛吃瓜黑料入口-每日大赛吃瓜黑料入口在哪_吃瓜黑料合集与大赛动态</title>
+<meta name="description" content="每日大赛吃瓜黑料入口导航页，汇总每日大赛动态、吃瓜黑料合集与热点线索整理方式，说明入口查找、信息核对与内容浏览的常见路径，帮助访问者按自己的需求快速定位相关栏目。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b1030'/%3E%3Ccircle cx='24' cy='26' r='9' fill='%23ffb648'/%3E%3Ccircle cx='42' cy='38' r='9' fill='%23ff5d8f'/%3E%3Cpath d='M14 50h36' stroke='%235be0c5' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#1b1030;
+    --ink-2:#2a1c48;
+    --paper:#f7f4fb;
+    --card:#ffffff;
+    --amber:#ffb648;
+    --pink:#ff5d8f;
+    --mint:#1fbfa6;
+    --muted:#6a6180;
+    --line:#e6e0f0;
+    --radius:16px;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,-apple-system,sans-serif;
+    font-size:16px;
+    line-height:1.75;
+  }
+  a{color:inherit;}
+  img,svg{max-width:100%;display:block;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px;}
+
+  /* Header */
+  .site-head{
+    background:linear-gradient(160deg,#1b1030 0%,#2a1c48 62%,#351f57 100%);
+    color:#f3edff;
+    border-bottom:3px solid var(--amber);
+  }
+  .head-inner{
+    display:flex;align-items:center;justify-content:space-between;gap:18px;
+    padding:14px 0;flex-wrap:wrap;
+  }
+  .brand{display:flex;align-items:center;gap:11px;text-decoration:none;}
+  .brand-mark{width:40px;height:40px;flex:0 0 40px;}
+  .brand-text{
+    font-size:19px;font-weight:800;letter-spacing:.4px;color:#fff;
+    line-height:1.25;
+  }
+  .brand-text small{
+    display:block;font-size:11px;font-weight:500;letter-spacing:2px;
+    color:var(--amber);text-transform:uppercase;
+  }
+  nav.main-nav{
+    display:flex;flex-wrap:wrap;gap:4px 6px;
+  }
+  nav.main-nav a{
+    text-decoration:none;color:#ddd2f2;font-size:14px;
+    padding:7px 11px;border-radius:999px;transition:background .18s,color .18s;
+    white-space:nowrap;
+  }
+  nav.main-nav a:hover,nav.main-nav a:focus-visible{
+    background:rgba(255,182,72,.18);color:#fff;outline:none;
+  }
+
+  /* Hero */
+  .hero{
+    background:
+      radial-gradient(760px 300px at 88% -40%,rgba(255,93,143,.30),transparent 70%),
+      radial-gradient(620px 260px at 6% 0%,rgba(91,224,197,.20),transparent 70%),
+      linear-gradient(180deg,#2a1c48 0%,#1b1030 100%);
+    color:#f6f1ff;
+    padding:44px 0 50px;
+    border-bottom:1px solid #3d2a63;
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);
+    gap:38px;align-items:center;
+  }
+  .kicker{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:12.5px;letter-spacing:1.6px;color:var(--amber);
+    background:rgba(255,182,72,.10);
+    border:1px solid rgba(255,182,72,.35);
+    padding:5px 12px;border-radius:999px;margin-bottom:16px;
+  }
+  .kicker i{width:7px;height:7px;border-radius:50%;background:var(--amber);display:block;}
+  h1{
+    font-size:clamp(26px,4.4vw,42px);
+    line-height:1.28;
+    margin:0 0 16px;
+    font-weight:900;
+    letter-spacing:.5px;
+    color:#fff;
+  }
+  h1 .hl{
+    background:linear-gradient(transparent 62%,rgba(255,93,143,.55) 62%);
+  }
+  .hero p.lead{
+    margin:0 0 24px;color:#d5c9ec;font-size:15.5px;max-width:34em;
+  }
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    text-decoration:none;font-weight:700;font-size:15px;
+    padding:12px 22px;border-radius:12px;border:1px solid transparent;
+    transition:transform .16s,box-shadow .16s,background .16s;
+  }
+  .btn-primary{
+    background:linear-gradient(120deg,var(--amber),#ff8f4d);
+    color:#2a1600;box-shadow:0 8px 22px rgba(255,143,77,.30);
+  }
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(255,143,77,.42);}
+  .btn-ghost{
+    color:#ecdfb3;border-color:rgba(255,182,72,.45);background:rgba(255,182,72,.07);
+  }
+  .btn-ghost:hover{background:rgba(255,182,72,.16);}
+  .hero-note{font-size:12.5px;color:#a395c4;margin-top:14px;}
+
+  .hero-art{
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:20px;padding:18px;
+    backdrop-filter:blur(2px);
+  }
+  .art-title{font-size:12.5px;letter-spacing:1.4px;color:#b8a8dd;margin:0 0 12px;}
+  .stat-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .stat{
+    background:rgba(27,16,48,.55);
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:12px;padding:11px 13px;
+  }
+  .stat b{display:block;font-size:18px;color:#fff;line-height:1.35;}
+  .stat span{font-size:12px;color:#a99bcb;}
+  .art-foot{font-size:12px;color:#988ac0;margin:12px 0 0;}
+
+  /* Section basics */
+  section.block{padding:46px 0;}
+  section.block + section.block{padding-top:0;}
+  .sec-head{max-width:46em;margin-bottom:24px;}
+  .sec-tag{
+    display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:1.4px;
+    color:var(--ink-2);background:#efe7fb;border:1px solid #e0d3f5;
+    border-radius:6px;padding:3px 9px;margin-bottom:10px;
+  }
+  h2{
+    font-size:clamp(20px,2.6vw,26px);line-height:1.4;margin:0 0 10px;
+    font-weight:800;letter-spacing:.3px;
+  }
+  .sec-head p{margin:0;color:var(--muted);font-size:15px;}
+
+  /* Entry cards */
+  .entry-grid{
+    display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;
+  }
+  .entry-card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px;display:flex;flex-direction:column;gap:9px;
+    transition:transform .18s,box-shadow .18s,border-color .18s;
+  }
+  .entry-card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(42,28,72,.10);border-color:#d8c9f2;}
+  .entry-card .ico{width:38px;height:38px;}
+  .entry-card h3{margin:0;font-size:17px;font-weight:800;}
+  .entry-card p{margin:0;font-size:14px;color:var(--muted);}
+  .entry-card .go{
+    margin-top:auto;font-size:13.5px;font-weight:700;color:#8a4bd6;
+    display:inline-flex;align-items:center;gap:6px;
+  }
+
+  /* Feed list */
+  .feed{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;
+  }
+  .feed-head{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    padding:14px 20px;border-bottom:1px solid var(--line);
+    background:#fbf8ff;flex-wrap:wrap;
+  }
+  .feed-head strong{font-size:15px;}
+  .feed-head span{font-size:12.5px;color:var(--muted);}
+  .feed ul{list-style:none;margin:0;padding:0;}
+  .feed li{
+    padding:16px 20px;border-bottom:1px solid #f1ecf9;
+    display:grid;grid-template-columns:96px minmax(0,1fr);gap:14px;
+  }
+  .feed li:last-child{border-bottom:none;}
+  .feed .tag{
+    font-size:12px;font-weight:700;color:#1e7f70;
+    background:#e3f7f3;border-radius:6px;padding:3px 0;text-align:center;
+    align-self:start;
+  }
+  .feed .tag.b{color:#a34570;background:#fde8ef;}
+  .feed .tag.c{color:#8a5a12;background:#fdf1dc;}
+  .feed h3{margin:0 0 5px;font-size:15.5px;font-weight:700;line-height:1.5;}
+  .feed p{margin:0;font-size:14px;color:var(--muted);}
+
+  /* Two column: guide + sidebar */
+  .two-col{
+    display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:26px;
+    align-items:start;
+  }
+  .prose{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;
+  }
+  .prose h2{margin-top:0;}
+  .prose p{margin:0 0 14px;font-size:15px;color:#3b3152;}
+  .prose p:last-child{margin-bottom:0;}
+  .prose strong{color:var(--ink-2);}
+
+  .steps{list-style:none;margin:6px 0 0;padding:0;counter-reset:s;}
+  .steps li{
+    counter-increment:s;position:relative;padding-left:40px;margin-bottom:14px;
+    font-size:14.5px;color:#3b3152;
+  }
+  .steps li:last-child{margin-bottom:0;}
+  .steps li::before{
+    content:counter(s);position:absolute;left:0;top:2px;
+    width:26px;height:26px;border-radius:9px;
+    background:linear-gradient(135deg,var(--ink-2),#5a3a92);
+    color:#ffd27f;font-size:13px;font-weight:800;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .steps b{color:var(--ink);}
+
+  .side-card{
+    background:#fdfbff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px;margin-bottom:16px;
+  }
+  .side-card h3{margin:0 0 10px;font-size:15.5px;font-weight:800;}
+  .side-card p{margin:0 0 10px;font-size:14px;color:var(--muted);}
+  .side-card p:last-child{margin-bottom:0;}
+  .check{list-style:none;margin:0;padding:0;}
+  .check li{
+    position:relative;padding-left:22px;font-size:14px;color:#3b3152;margin-bottom:9px;
+  }
+  .check li:last-child{margin-bottom:0;}
+  .check li::before{
+    content:"";position:absolute;left:0;top:8px;width:10px;height:10px;
+    border-radius:3px;background:linear-gradient(135deg,var(--mint),#7fe6d4);
+  }
+
+  /* FAQ */
+  .faq{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+  .faq details{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:16px 18px;
+  }
+  .faq summary{
+    cursor:pointer;font-weight:700;font-size:15px;list-style:none;
+    display:flex;justify-content:space-between;gap:10px;align-items:flex-start;
+  }
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::after{
+    content:"+";color:#8a4bd6;font-weight:800;font-size:18px;line-height:1;flex:0 0 auto;
+  }
+  .faq details[open] summary::after{content:"–";}
+  .faq details p{margin:10px 0 0;font-size:14px;color:var(--muted);}
+
+  /* Download strip */
+  .dl-strip{
+    background:linear-gradient(120deg,#241740,#3a2260 60%,#4a2a6f);
+    border-radius:20px;padding:26px 24px;color:#f4eeff;
+    display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
+    border:1px solid #4b3172;
+  }
+  .dl-strip h2{margin:0 0 6px;font-size:20px;color:#fff;}
+  .dl-strip p{margin:0;font-size:14px;color:#c6b7e4;max-width:40em;}
+  .btn-download{
+    background:linear-gradient(120deg,var(--amber),#ff9052);
+    color:#2a1600;box-shadow:0 8px 22px rgba(255,144,82,.28);
+  }
+  .btn-download[aria-disabled="true"]{
+    pointer-events:none;cursor:default;
+  }
+
+  /* Footer */
+  footer.site-foot{
+    background:#150c26;color:#a89bc6;margin-top:46px;
+    border-top:3px solid #3a2260;
+  }
+  .foot-main{
+    display:grid;grid-template-columns:minmax(0,1.4fr) repeat(2,minmax(0,1fr));
+    gap:28px;padding:36px 0 26px;
+  }
+  .foot-main h4{margin:0 0 10px;font-size:14px;color:#fff;letter-spacing:.5px;}
+  .foot-main p{margin:0 0 10px;font-size:13.5px;line-height:1.8;}
+  .foot-main ul{list-style:none;margin:0;padding:0;}
+  .foot-main li{margin-bottom:7px;font-size:13.5px;}
+  .foot-main a{text-decoration:none;color:#b7a9d4;}
+  .foot-main a:hover{color:#ffd27f;}
+  .foot-brand{
+    display:flex;align-items:center;gap:10px;margin-bottom:10px;
+  }
+  .foot-brand .brand-text{font-size:16px;}
+  .foot-brand .brand-text small{font-size:10px;letter-spacing:1.6px;}
+  .foot-bottom{
+    border-top:1px solid #2b1c45;padding:16px 0 22px;
+    font-size:12.5px;color:#7d6fa0;display:flex;justify-content:space-between;
+    gap:12px;flex-wrap:wrap;
+  }
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:26px;}
+    .entry-grid{grid-template-columns:1fr 1fr;}
+    .two-col{grid-template-columns:1fr;}
+    .foot-main{grid-template-columns:1fr 1fr;}
+    .foot-main > div:first-child{grid-column:1 / -1;}
+  }
+  @media (max-width:640px){
+    body{font-size:15.5px;}
+    .head-inner{padding:12px 0;gap:10px;}
+    .brand-text{font-size:16px;}
+    nav.main-nav{gap:2px;}
+    nav.main-nav a{font-size:13px;padding:6px 9px;}
+    .hero{padding:32px 0 36px;}
+    .entry-grid{grid-template-columns:1fr;}
+    .faq{grid-template-columns:1fr;}
+    .feed li{grid-template-columns:1fr;gap:6px;}
+    .feed .tag{justify-self:start;padding:2px 10px;}
+    .prose{padding:18px;}
+    .dl-strip{padding:20px 18px;}
+    .foot-main{grid-template-columns:1fr;gap:20px;}
+    section.block{padding:34px 0;}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="brand" href="#top" aria-label="每日大赛吃瓜黑料入口 首页">
+      <svg class="brand-mark" viewBox="0 0 64 64" role="img" aria-hidden="true">
+        <rect width="64" height="64" rx="15" fill="#2a1c48"/>
+        <circle cx="24" cy="26" r="9" fill="#ffb648"/>
+        <circle cx="42" cy="38" r="9" fill="#ff5d8f" opacity="0.92"/>
+        <path d="M14 51h36" stroke="#5be0c5" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-text">每日大赛吃瓜黑料入口<small>Daily Arena Digest</small></span>
+    </a>
+    <nav class="main-nav" aria-label="主导航">
+      <a href="#entries">入口导航</a>
+      <a href="#feed">今日线索</a>
+      <a href="#howto">查找方法</a>
+      <a href="#checklist">核对要点</a>
+      <a href="#faq">常见问题</a>
+      <a href="#download">资料下载</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker"><i></i>主题首页 · 入口索引与线索整理</span>
+        <h1>每日大赛吃瓜黑料入口</h1>
+        <p class="lead">
+          这里把“每日大赛吃瓜黑料入口”相关的几类访问需求放在同一页：先找到对应栏目，再按主题查看大赛动态、吃瓜线索和黑料合集的整理方式。页面不替你做判断，只把入口、信息来源和核对步骤讲清楚。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#entries">查看入口导航
+            <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#howto">先看查找方法</a>
+        </div>
+        <p class="hero-note">提示：栏目内容以公开讨论与整理记录为主，涉及他人信息时请自行核实来源。</p>
+      </div>
+      <aside class="hero-art" aria-label="页面信息概览">
+        <p class="art-title">本页结构一览</p>
+        <div class="stat-row">
+          <div class="stat"><b>3 类入口</b><span>赛事动态 / 吃瓜线索 / 合集归档</span></div>
+          <div class="stat"><b>4 步核对</b><span>来源、时间、原图、上下文</span></div>
+          <div class="stat"><b>6 个栏目</b><span>导航直达，无需跳转搜索</span></div>
+          <div class="stat"><b>持续整理</b><span>按主题归档，便于回看</span></div>
+        </div>
+        <p class="art-foot">每日大赛吃瓜黑料入口 的定位是索引页，不存储原始素材。</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ENTRIES -->
+  <section class="block" id="entries">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-tag">入口导航</span>
+        <h2>三类常用入口，按需求选择</h2>
+        <p>访问“每日大赛吃瓜黑料入口”的人，目的大多落在下面三类。先分清自己要找的是赛事进程、话题线索，还是往期归档，会比直接翻列表更快。</p>
+      </div>
+      <div class="entry-grid">
+        <article class="entry-card">
+          <svg class="ico" viewBox="0 0 40 40" aria-hidden="true">
+            <rect x="3" y="6" width="34" height="28" rx="6" fill="#efe7fb"/>
+            <path d="M11 16h18M11 22h12" stroke="#6b3fb5" stroke-width="2.6" stroke-linecap="round"/>
+            <circle cx="29" cy="26" r="4" fill="#ffb648"/>
+          </svg>
+          <h3>大赛动态入口</h3>
+          <p>关注赛程、场次与结果公布节奏，适合想跟进每日大赛进展的访问者。</p>
+          <span class="go">前往「今日线索」→</span>
+        </article>
+        <article class="entry-card">
+          <svg class="ico" viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M8 10h24v16H18l-8 6V10z" fill="#fde8ef"/>
+            <circle cx="16" cy="18" r="2" fill="#ff5d8f"/>
+            <circle cx="22" cy="18" r="2" fill="#ff5d8f"/>
+            <circle cx="28" cy="18" r="2" fill="#ff5d8f"/>
+          </svg>
+          <h3>吃瓜线索入口</h3>
+          <p>把零散讨论按话题归类，标注出现时间与出处，方便自己判断轻重。</p>
+          <span class="go">前往「查找方法」→</span>
+        </article>
+        <article class="entry-card">
+          <svg class="ico" viewBox="0 0 40 40" aria-hidden="true">
+            <rect x="6" y="5" width="28" height="30" rx="5" fill="#e3f7f3"/>
+            <path d="M13 14h14M13 20h14M13 26h9" stroke="#1e8f7c" stroke-width="2.4" stroke-linecap="round"/>
+          </svg>
+          <h3>黑料合集归档</h3>
+          <p>按日期与主题存放既往整理记录，回看时能对照前后文，避免断章取义。</p>
+          <span class="go">前往「核对要点」→</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEED -->
+  <section class="block" id="feed">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-tag">今日线索</span>
+        <h2>线索是怎么被整理出来的</h2>
+        <p>下面几条是整理流程的示例说明，用来展示“每日大赛吃瓜黑料入口”栏目内一条记录通常包含哪些字段，而不是对某一具体事件的结论。</p>
+      </div>
+      <div class="feed">
+        <div class="feed-head">
+          <strong>记录示例 · 字段说明</strong>
+          <span>每条含：话题标签 / 出现时间 / 出处 / 待核项</span>
+        </div>
+        <ul>
+          <li>
+            <span class="tag">赛程类</span>
+            <div>
+              <h3>场次变动与公布节奏</h3>
+              <p>先记录官方或组织方公布的时间点，再对照观众讨论中流传的说法；两者不一致时标注为待核，不直接采信。</p>
+            </div>
+          </li>
+          <li>
+            <span class="tag b">话题类</span>
+            <div>
+              <h3>讨论突然升温的节点</h3>
+              <p>记录话题在什么时间被集中提起、由哪条内容带动，并保留原始截图或链接，避免二次转述造成的信息偏移。</p>
+            </div>
+          </li>
+          <li>
+            <span class="tag c">合集类</span>
+            <div>
+              <h3>往期内容的归档方式</h3>
+              <p>按日期与主题双重索引，同一话题的后续进展挂在原条目下，回看时能顺着时间线读完，而不是只看单条。</p>
+            </div>
+          </li>
+          <li>
+            <span class="tag">核对类</span>
+            <div>
+              <h3>存疑内容的处理</h3>
+              <p>无法找到出处的说法单独放入待核清单，不进入正式合集；后续若出现新证据，再决定是否移动位置。</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO + SIDEBAR -->
+  <section class="block" id="howto">
+    <div class="wrap two-col">
+      <div class="prose">
+        <span class="sec-tag">查找方法</span>
+        <h2>从一个入口找到可用的信息</h2>
+        <p>
+          很多人搜索“每日大赛吃瓜黑料入口”，真正想解决的是“从哪里开始看”。一个比较稳妥的顺序是：先确认自己关心的是赛事本身还是围绕赛事的话题，再选择对应栏目，最后才去逐条翻记录。顺序反了，容易在大量零散内容里绕圈。
+        </p>
+        <p>
+          进入具体条目后，建议先看这条记录的<strong>出现时间</strong>和<strong>标注出处</strong>，再看内容本身。时间决定它是否还有效，出处决定它是否值得继续追。两者缺一的条目，通常只能当作线索，而不是结论。
+        </p>
+        <ol class="steps">
+          <li><b>选栏目：</b>赛事动态、吃瓜线索、黑料合集三类入口对应三种需求，先定位再浏览。</li>
+          <li><b>看字段：</b>确认记录是否带时间、出处和待核标记，字段齐全的条目参考价值更高。</li>
+          <li><b>查前后文：</b>同一话题尽量顺着归档时间线读，避免只看到被截取的一段。</li>
+          <li><b>留出判断：</b>对无法核实的说法保持保留态度，不因标题措辞而下结论。</li>
+        </ol>
+      </div>
+      <aside>
+        <div class="side-card">
+          <h3>适合谁来看</h3>
+          <p>想跟进每日大赛进程、习惯先看整理再看原帖、或者只想回看往期合集的人，都可以把这页当作起点。</p>
+          <p>如果你只是想快速知道“今天有没有新东西”，直接看「今日线索」栏目即可。</p>
+        </div>
+        <div class="side-card" id="checklist">
+          <h3>核对四要点</h3>
+          <ul class="check">
+            <li>来源是否可回溯到原始发布位置</li>
+            <li>时间是否与话题发生节点对得上</li>
+            <li>图片、截图是否为原始版本</li>
+            <li>上下文是否完整，有无被截断</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="block" id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-tag">常见问题</span>
+        <h2>关于这个入口页的几个说明</h2>
+        <p>以下回答针对“每日大赛吃瓜黑料入口”这一页面的使用方式，不涉及对任何具体事件的评价。</p>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>这个页面会直接展示原始素材吗？</summary>
+          <p>不会。本页承担的是入口索引与整理说明的角色，记录以话题、时间、出处等字段为主，原始内容请回到对应来源查看。</p>
+        </details>
+        <details>
+          <summary>每日大赛吃瓜黑料入口的内容多久整理一次？</summary>
+          <p>按主题归档，随讨论热度更新。页面上的条目会保留出现时间，方便你判断信息的新旧程度。</p>
+        </details>
+        <details>
+          <summary>看到互相矛盾的说法怎么办？</summary>
+          <p>先看两条记录各自标注的出处和时间，通常矛盾来自转述环节。找不到原始出处的说法，会被放入待核清单。</p>
+        </details>
+        <details>
+          <summary>为什么有的条目只有标题没有结论？</summary>
+          <p>因为该话题尚缺可核实的证据。保留标题是为了让后续进展能挂回原处，不代表对内容作出判断。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <section class="block" id="download">
+    <div class="wrap">
+      <div class="dl-strip">
+        <div>
+          <h2>整理模板下载</h2>
+          <p>一份用于记录话题标签、出现时间、出处与待核项的空白模板，方便你自己维护“每日大赛吃瓜黑料入口”的线索清单。</p>
+        </div>
+        <a class="btn btn-download" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">
+          下载
+          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v7M5 7.5l3 3 3-3M3.5 13h9" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-main">
+      <div>
+        <div class="foot-brand">
+          <svg width="34" height="34" viewBox="0 0 64 64" role="img" aria-hidden="true">
+            <rect width="64" height="64" rx="15" fill="#2a1c48"/>
+            <circle cx="24" cy="26" r="9" fill="#ffb648"/>
+            <circle cx="42" cy="38" r="9" fill="#ff5d8f" opacity="0.92"/>
+            <path d="M14 51h36" stroke="#5be0c5" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+          <span class="brand-text">每日大赛吃瓜黑料入口<small>Daily Arena Digest</small></span>
+        </div>
+        <p>面向访问者的入口索引页，围绕每日大赛吃瓜黑料入口的相关需求，整理赛事动态、话题线索与合集归档的查找路径。</p>
+      </div>
+      <div>
+        <h4>页面栏目</h4>
+        <ul>
+          <li><a href="#entries">入口导航</a></li>
+          <li><a href="#feed">今日线索</a></li>
+          <li><a href="#howto">查找方法</a></li>
+          <li><a href="#checklist">核对要点</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>使用提示</h4>
+        <ul>
+          <li>信息以公开讨论与整理记录为主</li>
+          <li>涉及他人内容请自行核实来源</li>
+          <li>存疑说法单独列入待核清单</li>
+          <li>下载入口为模板占位，暂未开放</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>每日大赛吃瓜黑料入口 · 内容整理与入口索引</span>
+      <span>本页不存储原始素材，仅提供查找与核对路径</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
