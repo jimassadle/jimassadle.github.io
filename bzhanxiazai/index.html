@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>b站下载-哔哩哔哩客户端下载_电脑版下载安装_B站视频下载工具</title>
+<meta name="description" content="b站下载主题首页，整理哔哩哔哩客户端电脑版下载安装路径、移动端扫码下载方式，以及离线缓存与视频下载的常见问题，帮助访客快速找到适合自己的b站下载方式。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2300aeec'/%3E%3Cpath d='M20 22h24v20a4 4 0 0 1-4 4H24a4 4 0 0 1-4-4z' fill='%23fff'/%3E%3Cpath d='M24 18l6 6M40 18l-6 6' stroke='%23fff' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M28 31v8M36 31v8' stroke='%2300aeec' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --blue:#00aeec;
+    --blue-deep:#0086c3;
+    --pink:#fb7299;
+    --ink:#1b2130;
+    --ink-2:#4a5468;
+    --ink-3:#7c869b;
+    --line:#e6ebf2;
+    --bg:#f6f9fc;
+    --card:#ffffff;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans SC",system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{width:min(1140px,92vw);margin:0 auto;}
+
+  /* header */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:16px;padding:12px 0;
+  }
+  .brand{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+  .brand .mark{
+    width:38px;height:38px;border-radius:11px;
+    background:linear-gradient(140deg,var(--blue),#5fd0f5);
+    display:grid;place-items:center;
+    box-shadow:0 6px 16px rgba(0,174,236,.28);
+  }
+  .brand .mark svg{width:22px;height:22px;}
+  .brand .name{
+    font-size:19px;font-weight:800;letter-spacing:.2px;
+    color:var(--ink);
+  }
+  .brand .name span{color:var(--blue);}
+  nav.links{display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+  nav.links a{
+    font-size:14.5px;color:var(--ink-2);padding:7px 12px;border-radius:9px;
+    transition:.2s;
+    white-space:nowrap;
+  }
+  nav.links a:hover{background:#eaf8fe;color:var(--blue-deep);}
+  .nav-cta{
+    font-size:14px;font-weight:700;color:#fff;background:var(--blue);
+    padding:9px 16px;border-radius:10px;
+    box-shadow:0 6px 14px rgba(0,174,236,.3);
+    white-space:nowrap;
+  }
+  .nav-cta:hover{background:var(--blue-deep);}
+
+  /* hero */
+  .hero{
+    position:relative;overflow:hidden;
+    background:
+      radial-gradient(900px 380px at 82% -10%,rgba(0,174,236,.16),transparent 70%),
+      radial-gradient(600px 300px at 4% 110%,rgba(251,114,153,.13),transparent 70%),
+      #fff;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-inner{
+    display:grid;grid-template-columns:1.15fr .85fr;gap:40px;
+    align-items:center;padding:56px 0 60px;
+  }
+  .tag{
+    display:inline-flex;align-items:center;gap:7px;
+    font-size:13px;font-weight:700;color:var(--blue-deep);
+    background:#e6f7fe;border:1px solid #c9ecfb;
+    padding:5px 12px;border-radius:999px;margin-bottom:18px;
+  }
+  .tag i{width:7px;height:7px;border-radius:50%;background:var(--blue);display:inline-block;}
+  h1{
+    font-size:clamp(30px,4.4vw,46px);
+    line-height:1.22;font-weight:900;letter-spacing:.5px;
+    margin-bottom:16px;
+  }
+  h1 em{font-style:normal;color:var(--blue);}
+  .lede{
+    font-size:16px;color:var(--ink-2);max-width:34em;margin-bottom:26px;
+  }
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    font-size:15.5px;font-weight:700;padding:13px 24px;border-radius:12px;
+    transition:.2s;
+  }
+  .btn svg{width:18px;height:18px;}
+  .btn-primary{
+    background:var(--blue);color:#fff;
+    box-shadow:0 10px 22px rgba(0,174,236,.32);
+  }
+  .btn-primary:hover{background:var(--blue-deep);transform:translateY(-1px);}
+  .btn-ghost{
+    background:#fff;color:var(--ink);border:1px solid var(--line);
+  }
+  .btn-ghost:hover{border-color:#bfe9fa;color:var(--blue-deep);}
+  .btn[disabled],.btn.is-disabled{
+    cursor:not-allowed;pointer-events:none;opacity:.95;
+  }
+  .hero-meta{
+    margin-top:22px;display:flex;gap:22px;flex-wrap:wrap;
+    font-size:13.5px;color:var(--ink-3);
+  }
+  .hero-meta b{color:var(--ink);font-weight:700;}
+
+  /* hero art */
+  .hero-art{position:relative;}
+  .device{
+    background:#fff;border:1px solid var(--line);border-radius:20px;
+    box-shadow:0 24px 50px rgba(23,45,74,.12);
+    overflow:hidden;
+  }
+  .device .bar{
+    display:flex;gap:6px;align-items:center;padding:11px 14px;
+    background:#f1f6fa;border-bottom:1px solid var(--line);
+  }
+  .device .bar span{width:9px;height:9px;border-radius:50%;background:#cfdae5;}
+  .device .bar span:nth-child(1){background:#ff8a8a;}
+  .device .bar span:nth-child(2){background:#ffd36e;}
+  .device .bar span:nth-child(3){background:#8fe0a6;}
+  .device .bar small{margin-left:auto;font-size:11px;color:var(--ink-3);letter-spacing:.4px;}
+  .device .screen{padding:18px;display:grid;gap:12px;}
+  .thumb{
+    display:grid;grid-template-columns:96px 1fr;gap:12px;align-items:center;
+    padding:8px;border-radius:12px;background:#fbfdff;border:1px solid #eef3f8;
+  }
+  .thumb .cover{
+    height:58px;border-radius:9px;
+    background:linear-gradient(135deg,#bdeaf8,#8ad9f3);
+    position:relative;overflow:hidden;
+  }
+  .thumb:nth-child(2) .cover{background:linear-gradient(135deg,#ffd7e3,#fbadc4);}
+  .thumb:nth-child(3) .cover{background:linear-gradient(135deg,#d9e9ff,#a9c8ff);}
+  .thumb .cover::after{
+    content:"";position:absolute;inset:0;margin:auto;
+    width:0;height:0;border-style:solid;
+    border-width:8px 0 8px 13px;border-color:transparent transparent transparent rgba(255,255,255,.95);
+  }
+  .thumb .lines{display:grid;gap:7px;}
+  .thumb .l1{height:9px;border-radius:5px;background:#dce7f0;width:82%;}
+  .thumb .l2{height:8px;border-radius:5px;background:#eaf1f7;width:56%;}
+  .float-badge{
+    position:absolute;right:-6px;bottom:-16px;
+    background:#fff;border:1px solid var(--line);border-radius:13px;
+    padding:10px 14px;display:flex;align-items:center;gap:9px;
+    box-shadow:0 14px 28px rgba(23,45,74,.12);
+    font-size:13px;font-weight:700;color:var(--ink-2);
+  }
+  .float-badge .dot{width:9px;height:9px;border-radius:50%;background:#2ecc71;}
+
+  /* sections */
+  section{padding:64px 0;}
+  .sec-head{margin-bottom:30px;max-width:44em;}
+  .sec-head .kicker{
+    font-size:13px;font-weight:800;letter-spacing:2px;color:var(--blue);
+    text-transform:uppercase;margin-bottom:8px;
+  }
+  .sec-head h2{
+    font-size:clamp(22px,2.8vw,30px);font-weight:800;line-height:1.3;
+    margin-bottom:10px;
+  }
+  .sec-head p{color:var(--ink-2);font-size:15.5px;}
+
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;transition:.22s;
+  }
+  .card:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(23,45,74,.09);border-color:#d5ecf8;}
+  .card .ico{
+    width:44px;height:44px;border-radius:12px;display:grid;place-items:center;
+    background:#e8f8fe;margin-bottom:16px;
+  }
+  .card .ico svg{width:22px;height:22px;stroke:var(--blue-deep);}
+  .card h3{font-size:17px;font-weight:800;margin-bottom:8px;}
+  .card p{font-size:14.5px;color:var(--ink-2);}
+  .card .step{
+    display:inline-block;font-size:12px;font-weight:800;color:var(--blue-deep);
+    background:#eef9ff;border-radius:6px;padding:2px 8px;margin-bottom:10px;
+  }
+
+  /* platform strip */
+  .platforms{
+    background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  }
+  .plat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .plat{
+    border:1px solid var(--line);border-radius:14px;padding:18px;
+    display:flex;flex-direction:column;gap:6px;background:#fbfdff;
+  }
+  .plat .pn{font-weight:800;font-size:15.5px;}
+  .plat .ps{font-size:13px;color:var(--ink-3);}
+  .plat .pill{
+    align-self:flex-start;margin-top:8px;font-size:11.5px;font-weight:700;
+    padding:3px 9px;border-radius:999px;background:#e8f8fe;color:var(--blue-deep);
+  }
+  .plat.alt .pill{background:#fff0f4;color:#d94f78;}
+
+  /* steps list */
+  .steps{display:grid;gap:0;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:#fff;}
+  .step-row{
+    display:grid;grid-template-columns:64px 1fr;gap:18px;
+    padding:22px 24px;border-bottom:1px solid var(--line);
+  }
+  .step-row:last-child{border-bottom:none;}
+  .step-num{
+    font-size:22px;font-weight:900;color:#cfe9f6;line-height:1;
+  }
+  .step-row h3{font-size:16px;font-weight:800;margin-bottom:6px;}
+  .step-row p{font-size:14.5px;color:var(--ink-2);}
+
+  /* faq */
+  .faq{display:grid;gap:14px;}
+  details{
+    background:#fff;border:1px solid var(--line);border-radius:13px;
+    padding:0;overflow:hidden;
+  }
+  details summary{
+    list-style:none;cursor:pointer;padding:17px 20px;font-weight:700;font-size:15.5px;
+    display:flex;align-items:center;justify-content:space-between;gap:14px;
+  }
+  details summary::-webkit-details-marker{display:none;}
+  details summary::after{
+    content:"+";font-size:20px;color:var(--blue);font-weight:700;line-height:1;
+    flex-shrink:0;
+  }
+  details[open] summary::after{content:"−";}
+  details[open] summary{color:var(--blue-deep);}
+  details .body{padding:0 20px 18px;font-size:14.5px;color:var(--ink-2);}
+
+  /* note */
+  .note{
+    background:linear-gradient(135deg,#f0fbff,#f7f9ff);
+    border:1px solid #d8eefb;border-radius:var(--radius);
+    padding:26px 28px;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;
+  }
+  .note .ni{
+    width:42px;height:42px;border-radius:11px;background:#fff;border:1px solid #d8eefb;
+    display:grid;place-items:center;flex-shrink:0;
+  }
+  .note .ni svg{width:20px;height:20px;stroke:var(--blue-deep);}
+  .note h3{font-size:16px;font-weight:800;margin-bottom:6px;}
+  .note p{font-size:14.5px;color:var(--ink-2);}
+
+  /* footer */
+  footer.site{
+    background:#111826;color:#aab4c4;padding:46px 0 30px;margin-top:20px;
+  }
+  .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px;padding-bottom:30px;border-bottom:1px solid #232d3f;}
+  .foot-brand{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+  .foot-brand .mark{
+    width:34px;height:34px;border-radius:10px;
+    background:linear-gradient(140deg,var(--blue),#5fd0f5);display:grid;place-items:center;
+  }
+  .foot-brand .mark svg{width:19px;height:19px;}
+  .foot-brand .name{font-size:17px;font-weight:800;color:#fff;}
+  .foot-brand .name span{color:var(--blue);}
+  footer p.desc{font-size:13.5px;line-height:1.85;color:#8d99ad;max-width:32em;}
+  footer h4{font-size:14px;color:#fff;margin-bottom:14px;font-weight:800;}
+  footer ul{list-style:none;display:grid;gap:9px;}
+  footer ul a{font-size:13.5px;color:#94a0b4;transition:.2s;}
+  footer ul a:hover{color:var(--blue);}
+  .foot-bottom{
+    padding-top:22px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+    font-size:12.5px;color:#6f7c92;
+  }
+
+  @media (max-width:900px){
+    .hero-inner{grid-template-columns:1fr;gap:34px;padding:40px 0 46px;}
+    .hero-art{order:2;max-width:440px;}
+    .float-badge{right:0;}
+    .grid-3{grid-template-columns:1fr 1fr;}
+    .plat-grid{grid-template-columns:1fr 1fr;}
+    .foot-top{grid-template-columns:1fr 1fr;}
+    nav.links{display:none;}
+    section{padding:48px 0;}
+  }
+  @media (max-width:600px){
+    .grid-3,.grid-2,.plat-grid,.foot-top{grid-template-columns:1fr;}
+    .step-row{grid-template-columns:44px 1fr;gap:12px;padding:18px;}
+    .step-num{font-size:19px;}
+    .hero-meta{gap:14px;font-size:12.5px;}
+    .btn{width:100%;justify-content:center;}
+    .hero-actions{gap:10px;}
+    .note{grid-template-columns:1fr;padding:22px;}
+    h1{font-size:30px;}
+    .brand .name{font-size:17px;}
+    .nav-cta{padding:8px 13px;font-size:13px;}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="b站下载 首页">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="14" rx="4" stroke="#fff" stroke-width="2"/><path d="M8 3l3 3M16 3l-3 3" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M9 12v4M15 12v4" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+      </span>
+      <span class="name">b站下载</span>
+    </a>
+    <nav class="links" aria-label="主导航">
+      <a href="#ways">下载方式</a>
+      <a href="#platform">平台版本</a>
+      <a href="#guide">安装步骤</a>
+      <a href="#offline">离线缓存</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <a class="nav-cta" href="#ways">获取下载入口</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <span class="tag"><i></i>哔哩哔哩客户端 · 下载指引</span>
+        <h1>b站下载</h1>
+        <p class="lede">想完成一次b站下载，通常有两种路径：一种是把哔哩哔哩客户端装到电脑或手机上，另一种是在客户端内把视频缓存到本地离线观看。本页把这两类b站下载需求拆开说明，先确认设备与用途，再选择对应入口。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#ways">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 21h16"/></svg>
+            查看下载方式
+          </a>
+          <a class="btn btn-ghost" href="#guide">安装与登录步骤</a>
+        </div>
+        <div class="hero-meta">
+          <span>覆盖平台 <b>电脑 / 手机 / 平板</b></span>
+          <span>核心能力 <b>在线播放 · 离线缓存</b></span>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <div class="device">
+          <div class="bar"><span></span><span></span><span></span><small>客户端界面示意</small></div>
+          <div class="screen">
+            <div class="thumb"><div class="cover"></div><div class="lines"><div class="l1"></div><div class="l2"></div></div></div>
+            <div class="thumb"><div class="cover"></div><div class="lines"><div class="l1"></div><div class="l2"></div></div></div>
+            <div class="thumb"><div class="cover"></div><div class="lines"><div class="l1"></div><div class="l2"></div></div></div>
+          </div>
+        </div>
+        <div class="float-badge"><span class="dot"></span>缓存完成 · 可离线观看</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WAYS -->
+  <section id="ways">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Download Routes</div>
+        <h2>b站下载的两条常见路径</h2>
+        <p>同样是b站下载，装客户端和存视频是两件事。先分清目标，再决定从哪里开始，能少走弯路。</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+          <span class="step">路径一</span>
+          <h3>下载电脑客户端</h3>
+          <p>适合希望在大屏上看视频、边看边做其他事情的用户。安装完成后登录账号，即可同步收藏、历史与追番进度。这类b站下载以安装包形式提供。</p>
+        </article>
+        <article class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></div>
+          <span class="step">路径二</span>
+          <h3>下载移动端应用</h3>
+          <p>手机与平板用户通常通过应用商店搜索安装。移动端的b站下载更看重随时随地打开，通勤、排队时也能接着看上一条没看完的内容。</p>
+        </article>
+        <article class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v10"/><path d="M8 9l4 4 4-4"/><rect x="3" y="15" width="18" height="6" rx="2"/></svg></div>
+          <span class="step">路径三</span>
+          <h3>缓存视频到本地</h3>
+          <p>在客户端内对单个视频选择缓存，即可在无网络时观看。需要提醒的是，缓存内容受版权与账号限制，通常只能在客户端内播放，不支持随意转存。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATFORM -->
+  <section id="platform" class="platforms">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Platforms</div>
+        <h2>按设备选择对应的b站下载版本</h2>
+        <p>不同系统的安装方式与功能侧重并不相同，选版本前先看清自己的设备类型与系统版本。</p>
+      </div>
+      <div class="plat-grid">
+        <div class="plat">
+          <div class="pn">Windows 电脑版</div>
+          <div class="ps">适合大屏观看与多任务，支持登录后同步账号数据。</div>
+          <span class="pill">桌面客户端</span>
+        </div>
+        <div class="plat">
+          <div class="pn">macOS 电脑版</div>
+          <div class="ps">面向苹果电脑用户，安装后同样可登录同一账号。</div>
+          <span class="pill">桌面客户端</span>
+        </div>
+        <div class="plat alt">
+          <div class="pn">Android 移动版</div>
+          <div class="ps">通过应用商店获取，支持缓存与离线播放。</div>
+          <span class="pill">移动应用</span>
+        </div>
+        <div class="plat alt">
+          <div class="pn">iOS / iPadOS 版</div>
+          <div class="ps">在 App Store 搜索安装，平板端界面随屏幕适配。</div>
+          <span class="pill">移动应用</span>
+        </div>
+      </div>
+      <div class="note" style="margin-top:24px;">
+        <div class="ni"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg></div>
+        <div>
+          <h3>下载入口请以官方渠道为准</h3>
+          <p>b站下载的安装包建议从哔哩哔哩官方网站或系统自带应用商店获取，避免来源不明的第三方安装包。下载前留意文件大小与版本号，安装后核对应用名称与图标是否一致。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUIDE -->
+  <section id="guide">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Install Guide</div>
+        <h2>完成b站下载后的安装与登录步骤</h2>
+        <p>下载只是第一步，装好、登录、调好播放设置，才算真正把客户端用起来。</p>
+      </div>
+      <div class="steps">
+        <div class="step-row">
+          <div class="step-num">01</div>
+          <div>
+            <h3>确认系统与存储空间</h3>
+            <p>安装前先看清系统版本要求，并预留足够磁盘或手机存储空间。空间不足时，b站下载过程可能中断或安装失败，清理后再重试更稳妥。</p>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-num">02</div>
+          <div>
+            <h3>运行安装包并完成安装</h3>
+            <p>电脑端双击安装包，按提示选择安装位置；移动端则点击安装并等待完成。安装期间不要强制关闭进程，避免文件写入不完整。</p>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-num">03</div>
+          <div>
+            <h3>登录账号，同步数据</h3>
+            <p>打开客户端后登录账号，收藏夹、观看历史与追番列表会随账号同步。若只在单设备使用，也可以先浏览再决定是否登录。</p>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-num">04</div>
+          <div>
+            <h3>调整清晰度与缓存设置</h3>
+            <p>在播放设置里选择默认清晰度，在缓存设置里指定存储位置与同时缓存数量。合理的默认值能让后续的b站下载与离线观看更省心。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFLINE -->
+  <section id="offline" style="padding-top:0;">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Offline Cache</div>
+        <h2>离线缓存：b站下载里最常被问到的部分</h2>
+        <p>很多人说的b站下载，其实指的是把视频缓存下来随时看。这里把适用范围与注意点讲清楚。</p>
+      </div>
+      <div class="grid-2">
+        <article class="card">
+          <h3>缓存能做什么</h3>
+          <p>在客户端内选择缓存后，视频会保存到本地，断网或流量受限时仍可播放。适合长途出行、地铁通勤等网络不稳定的场景，也方便反复回看教程类内容。</p>
+        </article>
+        <article class="card">
+          <h3>缓存有哪些限制</h3>
+          <p>缓存内容与账号绑定，一般只能在对应客户端内播放，无法直接导出为通用视频文件。部分内容因版权或分区规则不开放缓存，具体以客户端内按钮状态为准。</p>
+        </article>
+        <article class="card">
+          <h3>空间与清理</h3>
+          <p>缓存会持续占用存储。建议定期在客户端的缓存管理中删除已看完的内容，或设置自动清理规则，避免设备空间被长期占满影响其他应用。</p>
+        </article>
+        <article class="card">
+          <h3>画质与体积的取舍</h3>
+          <p>清晰度越高，单条视频占用的空间越大。移动端可优先选择适中清晰度以节省空间；电脑端空间充裕时，再考虑更高画质，兼顾观感与存储成本。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="padding-top:0;">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">FAQ</div>
+        <h2>关于b站下载的常见问题</h2>
+        <p>以下问题围绕下载、安装与缓存展开，按实际情况对照排查即可。</p>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>b站下载应该去哪个入口？</summary>
+          <div class="body">优先选择哔哩哔哩官方网站的下载页，或手机系统自带的应用商店。电脑端下载后核对安装包名称与发布方信息；移动端在商店页面确认开发者与评分，再点击获取。</div>
+        </details>
+        <details>
+          <summary>下载后安装失败怎么办？</summary>
+          <div class="body">先检查存储空间是否充足、系统版本是否满足要求，再确认安装包是否完整。若仍失败，可删除残留文件后重新下载安装。移动端还需确认是否允许安装来自该来源的应用。</div>
+        </details>
+        <details>
+          <summary>缓存好的视频能导出到其他设备吗？</summary>
+          <div class="body">通常不能。缓存内容受版权保护与账号机制约束，一般只在客户端内可播放，不支持直接导出为通用格式。若需在其他设备观看，建议在对应设备上重新登录并缓存。</div>
+        </details>
+        <details>
+          <summary>电脑端和手机端的数据会同步吗？</summary>
+          <div class="body">登录同一账号后，收藏、历史与追番等账号数据会同步。但缓存文件保存在各自设备的本地，不会随账号跨设备同步，需要在每台设备上分别缓存。</div>
+        </details>
+      </div>
+
+      <div class="note" style="margin-top:28px;">
+        <div class="ni"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5a1 1 0 0 1 1-1h9l6 6v9a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M14 4v6h6"/></svg></div>
+        <div>
+          <h3>下载前最后确认一遍</h3>
+          <p>明确设备类型、确认官方来源、预留存储空间，这三点做到，b站下载基本不会卡在中间环节。装好之后先登录账号，再按需设置清晰度与缓存位置，后续使用会更顺手。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand">
+          <span class="mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="14" rx="4" stroke="#fff" stroke-width="2"/><path d="M8 3l3 3M16 3l-3 3" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M9 12v4M15 12v4" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+          </span>
+          <span class="name">b站下载</span>
+        </div>
+        <p class="desc">围绕b站下载整理的下载指引页，涵盖电脑客户端与移动应用的获取路径、安装登录步骤，以及离线缓存的适用范围与限制说明。</p>
+      </div>
+      <div>
+        <h4>页面导航</h4>
+        <ul>
+          <li><a href="#ways">下载方式</a></li>
+          <li><a href="#platform">平台版本</a></li>
+          <li><a href="#guide">安装步骤</a></li>
+          <li><a href="#offline">离线缓存</a></li>
+          <li><a href="#faq">常见问题</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>相关入口</h4>
+        <ul>
+          <li><a href="https://www.bilibili.com" target="_blank" rel="noopener">哔哩哔哩官网</a></li>
+          <li><a href="https://app.bilibili.com" target="_blank" rel="noopener">哔哩哔哩客户端下载页</a></li>
+          <li><a href="#top">返回页面顶部</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>b站下载 · 下载与安装指引</span>
+      <span>内容为通用指引，具体功能与版本以官方实际提供为准</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
