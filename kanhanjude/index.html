@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>看韩剧的网站-在线韩剧观看_韩剧资源推荐_韩剧剧集分类</title>
+<meta name="description" content="看韩剧的网站主题首页，整理韩剧在线观看的入口思路、剧集分类与选剧参考，帮助访问者按题材、播出年份和剧集长度快速找到想看的韩剧。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23161b2e'/%3E%3Cpath d='M22 16v32l26-16z' fill='%23f4b6c2'/%3E%3Ccircle cx='18' cy='50' r='4' fill='%23f2d178'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#161b2e;
+  --ink-soft:#3c4256;
+  --muted:#6b7186;
+  --paper:#fbf8f6;
+  --card:#ffffff;
+  --line:#e8e2df;
+  --rose:#c8465f;
+  --rose-soft:#f7e4e8;
+  --gold:#c99a3f;
+  --gold-soft:#f8efdc;
+  --violet:#5a4a7a;
+  --violet-soft:#eee9f5;
+  --radius:16px;
+  --shadow:0 10px 30px rgba(22,27,46,.07);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans SC",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:16px;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* ---------- header ---------- */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(251,248,246,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;padding:12px 0;flex-wrap:wrap;
+}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.02em}
+.logo-mark{
+  width:38px;height:38px;border-radius:11px;
+  background:var(--ink);
+  display:grid;place-items:center;flex:none;
+}
+.logo-text{font-size:17px;color:var(--ink);white-space:nowrap}
+.logo-text small{display:block;font-size:11px;font-weight:500;color:var(--muted);letter-spacing:.14em;line-height:1.4}
+.nav{display:flex;gap:4px;flex-wrap:wrap;align-items:center}
+.nav a{
+  font-size:14px;color:var(--ink-soft);
+  padding:7px 12px;border-radius:999px;
+  transition:background .2s,color .2s;
+}
+.nav a:hover{background:var(--rose-soft);color:var(--rose)}
+.nav a.nav-cta{
+  background:var(--ink);color:#fff;font-weight:600;padding:8px 16px;
+}
+.nav a.nav-cta:hover{background:var(--rose)}
+
+/* ---------- hero ---------- */
+.hero{padding:52px 0 44px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;letter-spacing:.16em;color:var(--rose);
+  background:var(--rose-soft);padding:5px 14px;border-radius:999px;font-weight:600;
+}
+h1{
+  font-size:clamp(30px,4.4vw,46px);
+  line-height:1.24;margin:18px 0 16px;
+  letter-spacing:.01em;font-weight:800;
+}
+h1 .hl{
+  background:linear-gradient(transparent 62%,var(--gold-soft) 0);
+  padding:0 2px;
+}
+.hero-lead{font-size:16.5px;color:var(--ink-soft);max-width:36em;margin:0 0 26px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 24px;border-radius:999px;font-size:15px;font-weight:600;
+  transition:transform .18s,box-shadow .18s,background .18s;
+}
+.btn-primary{background:var(--rose);color:#fff;box-shadow:0 8px 20px rgba(200,70,95,.26)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(200,70,95,.32)}
+.btn-ghost{background:#fff;border:1px solid var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--rose);color:var(--rose)}
+.hero-note{font-size:13px;color:var(--muted);margin-top:14px}
+.hero-art{position:relative}
+.hero-art .frame{
+  border-radius:22px;overflow:hidden;box-shadow:var(--shadow);
+  border:1px solid var(--line);background:#fff;
+}
+.stat-row{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:10px;
+  margin-top:18px;
+}
+.stat{
+  background:#fff;border:1px solid var(--line);border-radius:12px;
+  padding:10px 12px;text-align:center;
+}
+.stat b{display:block;font-size:19px;color:var(--ink);line-height:1.3}
+.stat span{font-size:11.5px;color:var(--muted);letter-spacing:.06em}
+
+/* ---------- section shell ---------- */
+section{padding:44px 0}
+.sec-head{max-width:44em;margin-bottom:26px}
+.sec-kicker{font-size:12.5px;letter-spacing:.18em;color:var(--gold);font-weight:700;margin:0 0 8px}
+h2{font-size:clamp(21px,2.6vw,27px);line-height:1.35;margin:0 0 10px;font-weight:800;letter-spacing:.01em}
+.sec-head p{margin:0;color:var(--ink-soft);font-size:15.5px}
+
+/* ---------- filter ---------- */
+.filter-bar{
+  display:flex;gap:10px;flex-wrap:wrap;align-items:center;
+  background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:12px 14px;margin-bottom:22px;
+}
+.filter-bar label{font-size:13.5px;color:var(--muted);font-weight:600}
+.filter-bar select,.filter-bar input[type=search]{
+  font:inherit;font-size:14px;color:var(--ink);
+  border:1px solid var(--line);border-radius:9px;
+  padding:8px 10px;background:var(--paper);min-width:130px;
+}
+.filter-bar input[type=search]{flex:1;min-width:170px}
+.filter-bar select:focus,.filter-bar input:focus{outline:2px solid var(--rose-soft);border-color:var(--rose)}
+.filter-count{font-size:13px;color:var(--muted);margin-left:auto}
+.empty-tip{display:none;padding:22px;text-align:center;color:var(--muted);font-size:14.5px;background:#fff;border:1px dashed var(--line);border-radius:14px}
+
+/* ---------- drama cards ---------- */
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.drama-card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;display:flex;flex-direction:column;
+  transition:transform .2s,box-shadow .2s;
+}
+.drama-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.drama-thumb{
+  aspect-ratio:16/9;position:relative;
+  display:grid;place-items:center;
+}
+.drama-thumb svg{width:52px;height:52px;opacity:.9}
+.drama-body{padding:15px 16px 17px;display:flex;flex-direction:column;gap:8px;flex:1}
+.drama-tags{display:flex;gap:6px;flex-wrap:wrap}
+.tag{
+  font-size:11.5px;padding:2px 9px;border-radius:999px;
+  background:var(--violet-soft);color:var(--violet);font-weight:600;letter-spacing:.03em;
+}
+.tag.rose{background:var(--rose-soft);color:var(--rose)}
+.tag.gold{background:var(--gold-soft);color:#8a6520}
+.drama-body h3{font-size:16.5px;margin:0;font-weight:700;line-height:1.4}
+.drama-body p{margin:0;font-size:14px;color:var(--ink-soft);line-height:1.7}
+.drama-meta{
+  margin-top:auto;padding-top:10px;border-top:1px dashed var(--line);
+  display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted);
+}
+
+/* ---------- guide columns ---------- */
+.guide-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.guide-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px 20px;display:flex;flex-direction:column;gap:10px;
+}
+.guide-icon{
+  width:44px;height:44px;border-radius:12px;display:grid;place-items:center;
+  background:var(--rose-soft);flex:none;
+}
+.guide-card:nth-child(2) .guide-icon{background:var(--gold-soft)}
+.guide-card:nth-child(3) .guide-icon{background:var(--violet-soft)}
+.guide-card h3{margin:0;font-size:16.5px;font-weight:700}
+.guide-card p{margin:0;font-size:14.5px;color:var(--ink-soft)}
+.guide-card ul{margin:4px 0 0;padding-left:18px;font-size:14px;color:var(--ink-soft)}
+.guide-card li{margin-bottom:5px}
+
+/* ---------- article ---------- */
+.article-wrap{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:clamp(22px,3.4vw,40px);
+}
+.article-wrap h2{margin-top:0}
+.article-wrap h3{font-size:17px;margin:26px 0 8px;font-weight:700}
+.article-wrap p{margin:0 0 14px;color:var(--ink-soft);font-size:15.5px;max-width:44em}
+.article-wrap p:last-child{margin-bottom:0}
+.pull{
+  border-left:3px solid var(--gold);background:var(--gold-soft);
+  padding:12px 16px;border-radius:0 10px 10px 0;
+  font-size:14.5px;color:#6b5220;margin:18px 0;max-width:44em;
+}
+
+/* ---------- download ---------- */
+.download-box{
+  display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center;
+  background:var(--ink);color:#fff;border-radius:20px;
+  padding:clamp(24px,3.6vw,38px);
+}
+.download-box h2{color:#fff;margin:0 0 8px;font-size:clamp(19px,2.4vw,24px)}
+.download-box p{margin:0;color:#c9ccda;font-size:14.5px;max-width:40em}
+.dl-btn{
+  display:inline-flex;align-items:center;gap:9px;
+  background:var(--rose);color:#fff;font-weight:700;font-size:15px;
+  padding:13px 28px;border-radius:999px;white-space:nowrap;
+  pointer-events:none;opacity:.92;
+}
+.dl-note{font-size:12px;color:#9aa0b8;margin-top:10px;text-align:right}
+
+/* ---------- faq ---------- */
+.faq-item{
+  background:#fff;border:1px solid var(--line);border-radius:12px;
+  padding:16px 20px;margin-bottom:12px;
+}
+.faq-item h3{margin:0 0 6px;font-size:15.5px;font-weight:700}
+.faq-item p{margin:0;font-size:14.5px;color:var(--ink-soft)}
+
+/* ---------- footer ---------- */
+.site-footer{
+  border-top:1px solid var(--line);background:#fff;
+  margin-top:20px;padding:36px 0 28px;
+}
+.footer-top{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap;margin-bottom:24px}
+.footer-brand{max-width:26em}
+.footer-brand .logo-text{font-size:16px}
+.footer-brand p{margin:10px 0 0;font-size:13.5px;color:var(--muted)}
+.footer-links{display:flex;gap:44px;flex-wrap:wrap}
+.footer-col h4{margin:0 0 10px;font-size:13px;letter-spacing:.1em;color:var(--ink);font-weight:700}
+.footer-col a{display:block;font-size:13.5px;color:var(--muted);padding:3px 0}
+.footer-col a:hover{color:var(--rose)}
+.footer-bottom{
+  border-top:1px solid var(--line);padding-top:18px;
+  display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  font-size:12.5px;color:var(--muted);
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:30px}
+  .hero{padding:36px 0 30px}
+  .card-grid{grid-template-columns:repeat(2,1fr)}
+  .guide-grid{grid-template-columns:1fr}
+  .download-box{grid-template-columns:1fr}
+  .dl-note{text-align:left}
+}
+@media (max-width:620px){
+  body{font-size:15.5px}
+  .header-inner{padding:10px 0}
+  .nav{gap:2px}
+  .nav a{font-size:13px;padding:6px 10px}
+  .nav a.nav-cta{padding:7px 13px}
+  .hero-actions .btn{flex:1;justify-content:center}
+  .card-grid{grid-template-columns:1fr}
+  .stat-row{grid-template-columns:repeat(3,1fr);gap:8px}
+  .stat b{font-size:16px}
+  section{padding:34px 0}
+  .filter-bar{padding:10px}
+  .filter-bar select,.filter-bar input[type=search]{width:100%;min-width:0}
+  .filter-count{margin-left:0;width:100%}
+  .footer-links{gap:28px}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="#top" aria-label="看韩剧的网站首页">
+      <span class="logo-mark" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <rect x="2" y="4" width="20" height="14" rx="3" stroke="#f4b6c2" stroke-width="1.6"/>
+          <path d="M10 9.2v5.6l4.6-2.8z" fill="#f4b6c2"/>
+          <path d="M8 21h8" stroke="#f2d178" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="logo-text">看韩剧的网站<small>K-DRAMA GUIDE</small></span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#library">剧集分类</a>
+      <a href="#guide">选剧指南</a>
+      <a href="#topic">观看说明</a>
+      <a href="#faq">常见问题</a>
+      <a href="#download" class="nav-cta">使用清单</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">韩剧观看 · 主题首页</span>
+        <h1>看韩剧的网站</h1>
+        <p class="hero-lead">想找一处顺手的 <strong>看韩剧的网站</strong>，通常不只是要“能播”，更希望分得清题材、看得懂剧集长度、少花时间在无效点击上。本页把选剧、分类与观看前需要确认的事项整理在一起，帮助你在一个 <strong>看韩剧的网站</strong> 里更快锁定今晚要看的那一部。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#library">按题材找韩剧
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#guide">先看选剧指南</a>
+        </div>
+        <p class="hero-note">页面内容为观看与选剧参考，具体片源与可用状态以各平台实际展示为准。</p>
+      </div>
+
+      <div class="hero-art">
+        <div class="frame">
+          <svg viewBox="0 0 520 320" role="img" aria-label="韩剧观看场景插画：屏幕、播放键与剧集卡片">
+            <defs>
+              <linearGradient id="bgG" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#f7e4e8"/>
+                <stop offset="1" stop-color="#eee9f5"/>
+              </linearGradient>
+            </defs>
+            <rect width="520" height="320" fill="url(#bgG)"/>
+            <circle cx="430" cy="62" r="44" fill="#f8efdc"/>
+            <circle cx="86" cy="256" r="58" fill="#ffffff" opacity=".55"/>
+            <rect x="86" y="70" width="300" height="172" rx="14" fill="#161b2e"/>
+            <rect x="100" y="84" width="272" height="128" rx="7" fill="#2a3148"/>
+            <circle cx="236" cy="148" r="30" fill="#c8465f"/>
+            <path d="M227 134v28l24-14z" fill="#fff"/>
+            <rect x="86" y="252" width="96" height="9" rx="4.5" fill="#c8465f"/>
+            <rect x="196" y="252" width="60" height="9" rx="4.5" fill="#c99a3f"/>
+            <rect x="270" y="252" width="116" height="9" rx="4.5" fill="#c9ccda"/>
+            <rect x="398" y="120" width="74" height="46" rx="8" fill="#ffffff" opacity=".9"/>
+            <rect x="408" y="130" width="42" height="6" rx="3" fill="#c8465f"/>
+            <rect x="408" y="142" width="54" height="5" rx="2.5" fill="#d9d4e2"/>
+            <rect x="408" y="152" width="34" height="5" rx="2.5" fill="#d9d4e2"/>
+            <rect x="398" y="180" width="74" height="46" rx="8" fill="#ffffff" opacity=".9"/>
+            <rect x="408" y="190" width="42" height="6" rx="3" fill="#c99a3f"/>
+            <rect x="408" y="202" width="54" height="5" rx="2.5" fill="#d9d4e2"/>
+            <rect x="408" y="212" width="30" height="5" rx="2.5" fill="#d9d4e2"/>
+          </svg>
+        </div>
+        <div class="stat-row">
+          <div class="stat"><b>3</b><span>题材维度</span></div>
+          <div class="stat"><b>6</b><span>选剧要点</span></div>
+          <div class="stat"><b>1</b><span>观看清单</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LIBRARY ============ -->
+  <section id="library">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-kicker">剧集分类</p>
+        <h2>按题材与长度，筛出适合你的韩剧</h2>
+        <p>同一个 <strong>看韩剧的网站</strong> 里，剧集密度高、类型杂。先用题材和集数做一次粗筛，比在首页一路下滑要省时间。下面的条目用于说明分类思路，可按题材、集数区间或剧名关键词筛选。</p>
+      </div>
+
+      <div class="filter-bar" role="search">
+        <label for="genreFilter">题材</label>
+        <select id="genreFilter">
+          <option value="all">全部题材</option>
+          <option value="爱情">爱情</option>
+          <option value="悬疑">悬疑</option>
+          <option value="家庭">家庭</option>
+          <option value="职场">职场</option>
+        </select>
+        <label for="lenFilter">集数</label>
+        <select id="lenFilter">
+          <option value="all">不限</option>
+          <option value="short">12 集以内</option>
+          <option value="mid">13–16 集</option>
+          <option value="long">17 集以上</option>
+        </select>
+        <input type="search" id="kwFilter" placeholder="输入剧名关键词，如“都市”“律政”" aria-label="按剧名关键词筛选">
+        <span class="filter-count" id="filterCount">共 6 部</span>
+      </div>
+
+      <div class="card-grid" id="cardGrid">
+
+        <article class="drama-card" data-genre="爱情" data-len="mid" data-kw="都市 治愈 重逢">
+          <div class="drama-thumb" style="background:#f7e4e8">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 20s-7-4.4-7-9.3A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 2.7C19 15.6 12 20 12 20z" stroke="#c8465f" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="drama-body">
+            <div class="drama-tags"><span class="tag rose">爱情</span><span class="tag">都市</span><span class="tag gold">治愈</span></div>
+            <h3>都市重逢型爱情剧</h3>
+            <p>以旧识重逢为起点，节奏偏慢热，适合喜欢日常感和对话戏的观众。看这类剧时，前两集的信息量往往决定要不要继续。</p>
+            <div class="drama-meta"><span>13–16 集</span><span>慢热 · 情感线为主</span></div>
+          </div>
+        </article>
+
+        <article class="drama-card" data-genre="悬疑" data-len="short" data-kw="律政 反转 单元">
+          <div class="drama-thumb" style="background:#eee9f5">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="6" stroke="#5a4a7a" stroke-width="1.5"/><path d="M15.5 15.5 20 20" stroke="#5a4a7a" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="drama-body">
+            <div class="drama-tags"><span class="tag">悬疑</span><span class="tag">律政</span><span class="tag rose">反转</span></div>
+            <h3>律政推理单元剧</h3>
+            <p>单集一个案件的写法，适合碎片时间追看。悬疑类在 <strong>看韩剧的网站</strong> 中往往热度集中，追之前先确认是否有单元结构，会更好安排时间。</p>
+            <div class="drama-meta"><span>12 集以内</span><span>单元结构 · 信息密度高</span></div>
+          </div>
+        </article>
+
+        <article class="drama-card" data-genre="家庭" data-len="long" data-kw="家庭 长剧 群像">
+          <div class="drama-thumb" style="background:#f8efdc">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 11 12 4l8 7v8a1 1 0 0 1-1 1h-5v-5h-4v5H5a1 1 0 0 1-1-1z" stroke="#c99a3f" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="drama-body">
+            <div class="drama-tags"><span class="tag gold">家庭</span><span class="tag">群像</span><span class="tag">长剧</span></div>
+            <h3>家庭群像长剧</h3>
+            <p>人物多、关系线长，适合愿意按周跟看的观众。若只是想先试试水，可以从家庭线的核心冲突集切入，再回看前情。</p>
+            <div class="drama-meta"><span>17 集以上</span><span>群像 · 线性叙事</span></div>
+          </div>
+        </article>
+
+        <article class="drama-card" data-genre="职场" data-len="mid" data-kw="职场 现实 成长">
+          <div class="drama-thumb" style="background:#f7e4e8">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2" stroke="#c8465f" stroke-width="1.5"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18" stroke="#c8465f" stroke-width="1.5"/></svg>
+          </div>
+          <div class="drama-body">
+            <div class="drama-tags"><span class="tag rose">职场</span><span class="tag">现实</span><span class="tag gold">成长</span></div>
+            <h3>职场成长型剧集</h3>
+            <p>以行业细节和团队关系为看点，台词密度通常较高。这类剧适合边看边记人物，选一个 <strong>看韩剧的网站</strong> 时留意是否提供分集简介。</p>
+            <div class="drama-meta"><span>13–16 集</span><span>行业背景 · 台词驱动</span></div>
+          </div>
+        </article>
+
+        <article class="drama-card" data-genre="悬疑" data-len="mid" data-kw="犯罪 都市 双线">
+          <div class="drama-thumb" style="background:#eee9f5">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.4 8 8 9 4.6-1 8-4 8-9V6z" stroke="#5a4a7a" stroke-width="1.5" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="#5a4a7a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="drama-body">
+            <div class="drama-tags"><span class="tag">悬疑</span><span class="tag">犯罪</span><span class="tag rose">双线</span></div>
+            <h3>都市犯罪双线剧</h3>
+            <p>过去与现在两条时间线交替推进，适合喜欢拼线索的观众。追这类剧时，先看完整季比跳集更容易理解动机。</p>
+            <div class="drama-meta"><span>13–16 集</span><span>双线叙事 · 线索密集</span></div>
+          </div>
+        </article>
+
+        <article class="drama-card" data-genre="爱情" data-len="short" data-kw="青春 校园 短剧">
+          <div class="drama-thumb" style="background:#f8efdc">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4l2.3 4.9 5.2.7-3.8 3.7.9 5.3L12 16l-4.6 2.6.9-5.3L4.5 9.6l5.2-.7z" stroke="#c99a3f" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="drama-body">
+            <div class="drama-tags"><span class="tag rose">爱情</span><span class="tag">青春</span><span class="tag gold">短剧</span></div>
+            <h3>青春校园短剧</h3>
+            <p>篇幅短、情绪浓度高，适合一次看完。若你常在 <strong>看韩剧的网站</strong> 上找轻量内容，可以把它当作周末的备选。</p>
+            <div class="drama-meta"><span>12 集以内</span><span>轻量 · 情绪直给</span></div>
+          </div>
+        </article>
+
+      </div>
+      <div class="empty-tip" id="emptyTip">没有匹配的剧集条目，试试放宽题材或集数条件。</div>
+    </div>
+  </section>
+
+  <!-- ============ GUIDE ============ -->
+  <section id="guide">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-kicker">选剧指南</p>
+        <h2>在韩剧网站上少走弯路的三个判断</h2>
+        <p>挑选 <strong>看韩剧的网站</strong> 和挑剧是两件事。前者看可用性与信息完整度，后者看题材偏好和时间预算。分开判断，决策会清楚很多。</p>
+      </div>
+      <div class="guide-grid">
+        <div class="guide-card">
+          <div class="guide-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h10M4 18h13" stroke="#c8465f" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </div>
+          <h3>先确认分集信息</h3>
+          <p>一个合格的 <strong>看韩剧的网站</strong> 应能看清集数、单集时长和分集梗概。信息完整的页面能减少“点进去才发现不是想看的类型”的情况。</p>
+          <ul>
+            <li>集数与单集时长是否标明</li>
+            <li>是否有分集简介或时间线</li>
+            <li>题材标签是否具体到子类型</li>
+          </ul>
+        </div>
+        <div class="guide-card">
+          <div class="guide-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#c99a3f" stroke-width="1.7"/><path d="M12 8v4.5l3 1.8" stroke="#c99a3f" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </div>
+          <h3>按时间预算选长度</h3>
+          <p>12 集以内适合工作日碎片观看，16 集左右是常见规格，长剧则更适合按周跟。用集数倒推可用时间，比凭感觉开剧更可靠。</p>
+          <ul>
+            <li>短剧：单次可看完一段完整情节</li>
+            <li>中等篇幅：适合两三天集中追</li>
+            <li>长剧：需要稳定跟看节奏</li>
+          </ul>
+        </div>
+        <div class="guide-card">
+          <div class="guide-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3l2.6 5.6L20 9.5l-4 4 1 5.5-5-2.7-5 2.7 1-5.5-4-4 5.4-.9z" stroke="#5a4a7a" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>留意剧集更新状态</h3>
+          <p>连载中的剧与已完结剧的观看节奏不同。在 <strong>看韩剧的网站</strong> 上看到“更新中”标记时，先确认当前已播集数，再决定是否开追。</p>
+          <ul>
+            <li>连载剧：注意每周更新节点</li>
+            <li>完结剧：适合连续看完</li>
+            <li>状态说明应清晰可查</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TOPIC ARTICLE ============ -->
+  <section id="topic">
+    <div class="wrap">
+      <div class="article-wrap">
+        <h2>怎样用一个韩剧网站安排好一次观看</h2>
+        <p>把 <strong>看韩剧的网站</strong> 当作一个入口来看，访问者通常带着三种目的：找一部确定的剧、按题材随便逛逛，或者确认某部剧的集数与更新状态。这三种目的对应的操作路径并不相同，页面能否把信息分层呈现，直接决定使用体验。</p>
+
+        <h3>确定目标剧时，先看基础信息</h3>
+        <p>如果你已经知道剧名，最省事的路径是搜索后查看基础信息：集数、单集时长、播出年份、题材标签。这些信息决定你是否能在计划时间内看完。很多 <strong>看韩剧的网站</strong> 会在详情页顶部集中展示这些字段，浏览时优先看这一块，比直接点开第一集更有效。</p>
+
+        <h3>没有目标时，用题材做粗筛</h3>
+        <p>漫无目的地浏览，容易被热度排序带走。更实际的做法是先定题材，再看集数区间。爱情、悬疑、家庭、职场是韩剧里较为常见的几个方向，各自的内容节奏差别明显：悬疑偏信息密度，家庭剧偏关系铺陈，职场剧偏台词，爱情剧偏情绪线。确定了方向，再在 <strong>看韩剧的网站</strong> 里筛选，命中率会高不少。</p>
+
+        <div class="pull">提示：本页的分类条目用于说明筛选思路与判断维度，具体剧名、片源与可播放状态请以实际访问的平台页面为准。</div>
+
+        <h3>观看前的三个确认项</h3>
+        <p>第一，确认剧集状态是连载还是完结，避免看到一半卡在更新节点。第二，确认单集时长，部分剧集单集接近一小时，连续观看需要更完整的时段。第三，确认是否有分集简介，尤其是悬疑和双线叙事类，简介能帮助你在跳看时补上关键信息。这三点在不同 <strong>看韩剧的网站</strong> 上呈现方式各异，但判断逻辑一致。</p>
+
+        <h3>把观看安排成可执行的清单</h3>
+        <p>选好剧之后，可以简单列一份清单：剧名、题材、集数、打算每天看几集。这样做的好处是避免临时换剧、反复重看开头。对习惯在 <strong>看韩剧的网站</strong> 上同时收藏多部剧的观众来说，清单还能防止把不同剧的人物关系混在一起。若需要一份打印用的模板，可在页面下方获取使用清单。</p>
+
+        <h3>关于内容与版权的说明</h3>
+        <p>本页是围绕 <strong>看韩剧的网站</strong> 这一主题整理的信息页，提供分类思路、选剧判断与观看安排建议，不托管、不存储任何剧集文件，也不提供播放地址。实际观看请通过具备相应授权的正规平台进行，具体可用内容以平台公示为准。页面中的分类与条目为说明性示例，用于展示筛选与阅读结构。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DOWNLOAD ============ -->
+  <section id="download">
+    <div class="wrap">
+      <div class="download-box">
+        <div>
+          <h2>韩剧观看使用清单</h2>
+          <p>一页纸的观看安排模板：记录剧名、题材、集数、每日观看量与更新状态，方便在多个 <strong>看韩剧的网站</strong> 之间整理自己的追剧进度。文件为可打印的整理模板，不含任何剧集内容。</p>
+        </div>
+        <div>
+          <a class="dl-btn" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4v11M7.5 11.5 12 16l4.5-4.5M5 19h14" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            下载
+          </a>
+          <p class="dl-note">清单模板 · 后续开放下载</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-kicker">常见问题</p>
+        <h2>关于韩剧观看与选站的几个疑问</h2>
+      </div>
+      <div class="faq-item">
+        <h3>一个看韩剧的网站，最该先看哪项信息？</h3>
+        <p>建议先看集数与单集时长，再看剧集状态。这两项决定你能不能按计划看完，比评分和热度更直接影响观看安排。</p>
+      </div>
+      <div class="faq-item">
+        <h3>短剧和长剧怎么选？</h3>
+        <p>时间零散时优先 12 集以内的短剧，能连续看完一段完整情节；有稳定空闲时段再考虑 16 集左右或更长的剧集，避免中途断档影响理解。</p>
+      </div>
+      <div class="faq-item">
+        <h3>为什么页面里的剧集条目没有写具体剧名？</h3>
+        <p>本页是主题信息页，侧重分类与选剧思路，条目用作筛选结构的示例。具体片名、片源与播放状态请以实际访问的平台页面为准。</p>
+      </div>
+      <div class="faq-item">
+        <h3>本页提供播放或下载剧集吗？</h3>
+        <p>不提供。本页不托管剧集文件，也不提供播放地址；下载入口仅为观看安排清单模板，用于整理个人追剧进度。</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="logo-text">看韩剧的网站</span>
+        <p>围绕韩剧观看与选剧整理的 <strong>看韩剧的网站</strong> 主题信息页，提供题材分类、长度判断与观看安排思路。内容为信息参考，不含剧集文件与播放地址。</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>页面导航</h4>
+          <a href="#library">剧集分类</a>
+          <a href="#guide">选剧指南</a>
+          <a href="#topic">观看说明</a>
+          <a href="#faq">常见问题</a>
+        </div>
+        <div class="footer-col">
+          <h4>观看整理</h4>
+          <a href="#download">使用清单</a>
+          <a href="#library">按题材筛选</a>
+          <a href="#guide">时间预算判断</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>看韩剧的网站 · 主题信息页</span>
+      <span>内容以分类与选剧参考为主，具体片源与可用状态以平台公示为准。</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var genre = document.getElementById('genreFilter');
+  var len = document.getElementById('lenFilter');
+  var kw = document.getElementById('kwFilter');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.drama-card'));
+  var count = document.getElementById('filterCount');
+  var empty = document.getElementById('emptyTip');
+
+  function matchLen(card, v){
+    if(v === 'all') return true;
+    var raw = card.getAttribute('data-len');
+    if(v === 'short') return raw === 'short';
+    if(v === 'mid') return raw === 'mid';
+    if(v === 'long') return raw === 'long';
+    return true;
+  }
+
+  function apply(){
+    var g = genre.value, l = len.value, k = kw.value.trim().toLowerCase();
+    var shown = 0;
+    cards.forEach(function(card){
+      var okG = (g === 'all') || card.getAttribute('data-genre') === g;
+      var okL = matchLen(card, l);
+      var text = (card.getAttribute('data-kw') || '') + ' ' + card.textContent.toLowerCase();
+      var okK = !k || text.indexOf(k) !== -1;
+      var ok = okG && okL && okK;
+      card.style.display = ok ? '' : 'none';
+      if(ok) shown++;
+    });
+    count.textContent = '共 ' + shown + ' 部';
+    empty.style.display = shown === 0 ? 'block' : 'none';
+  }
+
+  [genre, len].forEach(function(el){ el.addEventListener('change', apply); });
+  kw.addEventListener('input', apply);
+})();
+</script>
+
+</body>
+  </html>
